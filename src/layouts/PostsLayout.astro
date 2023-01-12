@@ -1,0 +1,31 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BlogPost from "../components/BlogPost.astro";
+import "@fontsource/jetbrains-mono";
+
+const { frontmatter } = Astro.props;
+// const { title, description, date, hero } = Astro.props;
+---
+
+<html lang={frontmatter.lang || "en"}>
+  <body class="container w-3/4 max-w-screen-xl mx-auto prose">
+    <!-- <Header title="Title" /> -->
+    <main class="py-6 lg:py-20">
+      <BlogPost
+        title={frontmatter.title}
+        image={frontmatter.image}
+        date={frontmatter.date}
+        tags={frontmatter.tags}
+      >
+        <slot />
+      </BlogPost>
+    </main>
+    <Footer />
+  </body>
+</html>
+<style>
+  body {
+    font-family: "JetBrains Mono", monospace;
+  }
+</style>

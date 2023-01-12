@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  repoTitle: string;
+  tags: string[];
+  projectImage: string;
+  url: string;
+}
+const { repoTitle, tags, projectImage, url } = Astro.props;
+---
+
+<a
+  href={url}
+  class="relative top-0 block h-full overflow-hidden transition-all duration-100 ease-in-out bg-white shadow-lg hover:-top-2 hover:shadow-xl rounded-xl"
+  data-test="article-card"
+>
+  <img src={projectImage} width="360" height="192" />
+  <div class="px-8 py-6">
+    <div class="text-2xl font-bold leading-tight grid grid-cols-2">
+      {repoTitle}
+      <div class="flex justify-end">
+        <Icon pack="mdi" name="github" width="26" height="26" />
+      </div>
+    </div>
+    <p class="flex items-center mt-4 text-xs text-gray-600">
+      {tags}
+    </p>
+  </div>
+</a>
+
+<style>
+  img {
+    width: 100%;
+    aspect-ratio: 15/7;
+    object-fit: cover;
+  }
+</style>

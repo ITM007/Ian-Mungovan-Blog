@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon";
+
+let description = `Hi, my name is Ian Mungovan. I am a DevSecOps Engineer at Rolls-Royce Defense in Indianapolis Indiana, with a focus on Cloud Native Development, Application Security, and Digital Transformation. I also am a Cyber Security Officer in the US Army. Check out my some of my blog posts, and feel free to reach out at the links below.`;
+let image = "Ian_Picture.jpeg";
+---
+
+<div class="grid grid-cols-4 pb-16">
+  <img class="rounded-full w-5/6" src={image} alt="" />
+  <div class="col-span-3 pt-4">
+    <div class="text-lg">{description}</div>
+
+    <div class="flex text-lg pt-6 pb-2">
+      Find me on:
+      <a class="ml-4 mr-2" href="https://github.com/ITM007">
+        <Icon pack="mdi" name="github" width="30" height="30" />
+      </a>
+      <a class="" href="https://www.linkedin.com/in/ian-mungovan">
+        <Icon pack="mdi" name="linkedin" width="30" height="30" />
+      </a>
+    </div>
+    <div class="flex text-lg">
+      My Favorite Tech:
+      <a class="ml-4 mr-2" href="https://astro.build/">
+        <Icon
+          pack="vscode-icons"
+          name="file-type-astro"
+          width=" 30"
+          height="30"
+        /></a
+      >
+      <a class="mr-2" href="https://elixir-lang.org/">
+        <Icon
+          pack="vscode-icons"
+          name="file-type-elixir"
+          width=" 30"
+          height="30"
+        /></a
+      >
+      <a class="mr-2" href="https://www.phoenixframework.org/">
+        <Icon pack="logos" name="phoenix" width="34" height="34" /></a
+      >
+      <a href="https://www.digitalocean.com/">
+        <Icon pack="mdi" name="digital-ocean" width="30" height="30" /></a
+      >
+    </div>
+  </div>
+</div>

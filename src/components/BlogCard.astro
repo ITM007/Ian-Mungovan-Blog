@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon";
+// Import all posts from the blog directory
+const allPosts = await Astro.glob("../pages/blog/*.md");
+// Sort posts by date in descending order
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+// Only include 10 most recent posts in the feed
+const lastTenPosts = sortedPosts.slice(0, 10);
+---
+
+<ul>
+  {
+    lastTenPosts.map(post => (
+      <a href={`/blog/${post.frontmatter.link}`}>
+        <div class="grid grid-cols-2 mb-20 h-full overflow-hidden transition-all duration-100 ease-in-out bg-white rounded-xl hover:border-r-2 hover:bg-slate-50">
+          <img class="rounded-md w-11/12" src={post.frontmatter.image} />
+          <div>
+            <div class="text-2xl">{post.frontmatter.title}</div>
+            <div class="pb-4">
+              {post.frontmatter.date} | {post.frontmatter.tags}
+            </div>
+            <div>{post.frontmatter.description}</div>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</ul>

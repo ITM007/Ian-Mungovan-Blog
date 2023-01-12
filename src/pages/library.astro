@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/PageLayout.astro";
+// import About from "../components/About.mdx";
+import Book from "../components/Book.astro";
+---
+
+<Layout>
+  <div class="text-2xl mb-6 pb-4 border-b-2">Favorites</div>
+  <Book
+    title="Ask Your Developer"
+    date="January 2021"
+    author="Jeff Lawson"
+    image="/Ask_Your_Developer.webp"
+    description="Jeff Lawson does an excellent jop explaining why it is important to have developers solve problems, rather than implement solutions. A must read for anyone who wants to build a great team."
+  />
+  <Book
+    title="The Soul of Erlang and Elixir"
+    date="April 2019"
+    author="Sasa Juric"
+    image="Elixir_OTP.jpg"
+    description="The best talk on Elixir, Erlang, and the BEAM. Shows what is capable with this technology and how it can be used to build extremly reliable systems. It demonstrates why the Let it fail philosophy can be so powerful in distrubuited systems."
+  />
+  <Book
+    title="Hackable"
+    date="December 2020"
+    author="Tim Burton"
+    image="/Hackable.webp"
+    description="Hackable breaks down a lot of the misconceptions about application security and how to do it right. It Explains the difference between: Vunerability Scan, Vunerability Assesments, Penetration Tests, and Red Team Exercises, as well as how to do all the above right."
+  />
+
+  <div class="text-2xl mb-6 pb-4 border-t-2 pt-6">Recent</div>
+  <Book
+    title="Web Secuirity For Developers"
+    date="June 2020"
+    author="Malcom Mcdonald"
+    image="/Web_Security_For_Developers.png"
+    description="Web security for developers is a great intro into the world of application security for developers. The book gives an overview of many of the common issues that web developers need to be aware of, as well as explaining how to think about security as you are writing code."
+  />
+
+  <Book
+    title="Building a Neural Network"
+    date="November 2020"
+    author="Samson Zhang"
+    image="Neural_Network.jpg"
+    description="An excellent talk explaining the basic math behind neural networks, as well as implementing one from scratch in Python. If you want to learn the basics of machine learning in 30 minutes, this is the video to watch."
+  />
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Card from "../components/postPreview.astro";
+
+const allPosts = await Astro.glob("../pages/blog/*.md");
+// Sorts posts if fetured is true
+const featuredPosts = allPosts.sort(post => post.frontmatter.featured);
+// Only allows 3 featured posts
+const threeFeaturedPosts = featuredPosts.slice(0, 3);
+---
+
+<div class="border-t-2"></div>
+<h1 class="pb-6 mt-6 text-2xl">Featured</h1>
+<section
+  class="grid grid-cols-1 gap-6 py-8 md:grid-cols-2 lg:grid-cols-3"
+  data-test="articles-section"
+>
+  {
+    threeFeaturedPosts.map(p => (
+      <div>
+        <Card post={p} />
+      </div>
+    ))
+  }
+</section>
+<div class="mt-8 border-t-2"></div>

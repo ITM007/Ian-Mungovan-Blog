@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  title: string;
+  date: string;
+  image: string;
+  tags: string[];
+}
+const { title, date, image, tags } = Astro.props;
+---
+
+<article class="max-w-5xl px-3 mx-auto">
+  <header class="max-w-3xl mx-auto text-center content">
+    <div class="pb-6 text-4xl font-bold">{title}</div>
+  </header>
+
+  <!-- Image -->
+  {
+    image && (
+      <img
+        class="mx-auto rounded-xl"
+        style="min-width: 80%;"
+        loading="lazy"
+        src={image}
+        alt={title}
+      />
+    )
+  }
+
+  <div class="flex justify-center pt-4 text-lg">
+    <!-- <Icon class="mr-1" pack="uit" name="calender" width="20" height="20" /> -->
+    {date} | Ian Mungovan | {tags}
+  </div>
+
+  <!-- Content -->
+  <section class="max-w-3xl py-6 mx-auto lg:py-12 content">
+    <slot />
+  </section>
+</article>

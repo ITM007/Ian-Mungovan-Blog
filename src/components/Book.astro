@@ -1,0 +1,23 @@
+---
+export interface Props {
+  title: string;
+  date: string;
+  image: string;
+  author: string;
+  description: string;
+}
+const { title, date, image, author, description } = Astro.props;
+
+// If you want to use a youtube video thumbnail as an image, you can use this. Remember to replace the ID with the video ID.
+// https://img.youtube.com/vi/ID/maxresdefault.jpg
+---
+
+<!-- width="180" height="90" -->
+<div class="grid grid-cols-4 pb-20">
+  <img class="rounded-md w-3/4" src={image} alt="" />
+  <div class="col-span-3">
+    <div class="text-lg">{title}</div>
+    <div class="pb-4">{author} | {date}</div>
+    <div>{description}</div>
+  </div>
+</div>

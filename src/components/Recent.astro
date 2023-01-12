@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon";
+// Import all posts from the blog directory
+const allPosts = await Astro.glob("../pages/blog/*.md");
+// Sort posts by date in descending order
+const sortedPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+// Only include 5 most recent posts in the feed
+const lastFivePosts = sortedPosts.slice(0, 5);
+---
+
+<div class="mt-6 mb-8 text-2xl">Recent</div>
+<ul>
+  {
+    lastFivePosts.map(post => (
+      <a href={`/blog/${post.frontmatter.link}`}>
+        <li class="mt-8">
+          {post.frontmatter.title}
+          <div class="flex italic">
+            <Icon
+              class="mr-1"
+              pack="uit"
+              name="calender"
+              width="20"
+              height="20"
+            />
+            {post.frontmatter.date} | {post.frontmatter.tags}
+          </div>
+          <div>{post.frontmatter.description}</div>
+        </li>
+      </a>
+    ))
+  }
+</ul>

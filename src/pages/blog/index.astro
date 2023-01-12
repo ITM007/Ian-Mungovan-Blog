@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/PageLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+const allPosts = await Astro.glob("../blog/*.md");
+const tags = [...new Set(allPosts.map(post => post.frontmatter.tags).flat())];
+const pageTitle = "Tag Index";
+import "@fontsource/jetbrains-mono";
+---
+
+<Layout title={"Blog"}>
+  <div class="text-2xl">Tags</div>
+  <div class="mb-20 border-b-2 pb-6 flex">
+    {
+      tags.map(tag => (
+        <div class="text-lg pr-8 pt-4 hover:text-gray-800">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </div>
+      ))
+    }
+  </div>
+  <BlogCard />
+</Layout>
+
+<style>
+  body {
+    font-family: "JetBrains Mono", monospace;
+  }
+</style>
