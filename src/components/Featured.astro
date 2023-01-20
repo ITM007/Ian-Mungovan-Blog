@@ -3,7 +3,10 @@ import Card from "../components/postPreview.astro";
 
 const allPosts = await Astro.glob("../pages/blog/*.md");
 // Sorts posts if fetured is true
-const featuredPosts = allPosts.sort(post => post.frontmatter.featured);
+const featuredPosts = allPosts.sort(post =>
+  post.frontmatter.featured ? -1 : 1
+);
+
 // Only allows 3 featured posts
 const threeFeaturedPosts = featuredPosts.slice(0, 3);
 ---

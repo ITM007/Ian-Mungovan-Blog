@@ -13,8 +13,12 @@ const { title, date, image, author, description } = Astro.props;
 ---
 
 <!-- width="180" height="90" -->
-<div class="grid grid-cols-4 pb-20">
-  <img class="rounded-md w-3/4" src={image} alt="" />
+<div class="grid md:grid-cols-4 pb-20 sm:grid-cols-3">
+  <img
+    class="rounded-md md:w-4/5 lg:w-3/4 xl:w-2/3 sm:col-start-2 md:col-start-1 pb-10"
+    src={image}
+    alt=" "
+  />
   <div class="col-span-3">
     <div class="text-lg">{title}</div>
     <div class="pb-4">{author} | {date}</div>

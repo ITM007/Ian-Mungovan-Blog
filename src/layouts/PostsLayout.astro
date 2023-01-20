@@ -8,9 +8,11 @@ const { frontmatter } = Astro.props;
 // const { title, description, date, hero } = Astro.props;
 ---
 
-<html lang={frontmatter.lang || "en"}>
+<html lang={frontmatter.lang || "en"} title="Posts">
+  <title>Ian Mungovan Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <body class="container w-3/4 max-w-screen-xl mx-auto prose">
-    <!-- <Header title="Title" /> -->
+    <Header title="Title" />
     <main class="py-6 lg:py-20">
       <BlogPost
         title={frontmatter.title}

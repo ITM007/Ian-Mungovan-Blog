@@ -13,11 +13,11 @@ const lastFivePosts = sortedPosts.slice(0, 5);
 ---
 
 <div class="mt-6 mb-8 text-2xl">Recent</div>
-<ul>
+<div>
   {
     lastFivePosts.map(post => (
       <a href={`/blog/${post.frontmatter.link}`}>
-        <li class="mt-8">
+        <div class="mt-8">
           {post.frontmatter.title}
           <div class="flex italic">
             <Icon
@@ -30,8 +30,8 @@ const lastFivePosts = sortedPosts.slice(0, 5);
             {post.frontmatter.date} | {post.frontmatter.tags}
           </div>
           <div>{post.frontmatter.description}</div>
-        </li>
+        </div>
       </a>
     ))
   }
-</ul>
+</div>

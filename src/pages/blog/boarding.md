@@ -2,7 +2,7 @@
 layout: "../../layouts/PostsLayout.astro"
 title: Ian Mungovan Boarding
 author: "Ian Mungovan"
-date: "2023-01-10"
+date: "2023-01-20"
 description: "This is my page, written in Markdown number 6."
 tags: [" Boarding", " Rolls-Royce"]
 link: "boarding"

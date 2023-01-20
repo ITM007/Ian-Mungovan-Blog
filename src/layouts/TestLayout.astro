@@ -9,14 +9,13 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="en" title="Ian Mungovan Blog">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <Header title={title} />
-    <title>Ian Mungovan Blog</title>
   </head>
-  <body class="container w-2/3 max-w-screen-xl mx-auto">
+  <body class="container w-3/4 max-w-screen-xl mx-auto">
     <slot />
     <Footer />
     <style>

@@ -2,18 +2,19 @@
 import ProjectCard from "../components/projectCard.astro";
 import Layout from "../layouts/PageLayout.astro";
 import Project from "../components/Projects.mdx";
+import { Icon } from "astro-icon";
 ---
 
 <Layout>
-  <div class="prose">
+  <div class="prose max-w-3xl mx-auto content">
     <Project />
   </div>
   <div class="grid grid-cols-1 gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
-    <ProjectCard
-      repoTitle={"Portfolio"}
-      projectImage={"/Portfolio.png"}
+    <!-- <ProjectCard
+      repoTitle={"AstroBlog"}
+      projectImage={"/Blog.png"}
       tags={[" Astro", " Tailwindcss", " Typescript"]}
       url=""
-    />
+    /> -->
   </div>
 </Layout>
