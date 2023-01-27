@@ -10,18 +10,7 @@ const { frontmatter } = Astro.props;
 
 <html lang={frontmatter.lang || "en"} title="Posts">
   <title>Ian Mungovan Blog</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG8HT8RXZX"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "G-WG8HT8RXZX");
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <body class="container w-3/4 max-w-screen-xl mx-auto prose">
     <Header title="Title" />
