@@ -5,6 +5,9 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ianmungovan.dev",
-  integrations: [mdx(), tailwind(), sitemap()],
+  site: "https://ianmungovan.dev/",
+  integrations: [mdx(), tailwind({
+    // Custom Tailwind config
+    config: {path: "./tailwind.config.cts"}
+  }), sitemap()],
 });

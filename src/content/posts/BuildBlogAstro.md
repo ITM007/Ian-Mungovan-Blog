@@ -3,15 +3,16 @@ layout: "../../layouts/PostsLayout.astro"
 title: "How I Built My Blog With Astro"
 author: "Ian Mungovan"
 date: "2023-01-15"
-description: "How I used Astro to build a high performance blog."
+description: "How I used Astro to build a high performance blog, and deployed it using Digital Ocean for free."
 tags: [" Astro", " Digital Ocean"]
 link: "BuildBlogAstro"
-image: "../Blog.png"
+image: "/blogImages/buildingBlogAstro/Blog.png"
 draft: true
 featured: true
+slug: "BuildBlogAstro"
 ---
 
-# Table of contents
+## Table of contents
 
 - [Introduction](#introduction)
 
@@ -41,7 +42,7 @@ Island Architecture is a concept that I have been interested in for a while. The
 
 Astro allows you to use zero JavaScript for static pages. This is a significant feature as it allows you to have the speed of a static page, but if you need to use JavaScript, you can. We can see this below in the screenshot of the network tab in the chrome dev tools. The page is fully loaded with no JavaScript.
 
-![No JavaScript](../Blog_No_JS.png)
+![No JavaScript](/blogImages/buildingBlogAstro/Blog_No_JS.png)
 
 ### High Performance with Ease of Use
 
@@ -56,23 +57,26 @@ Astro has fantastic performance, this is mostly because of the Island Architectu
 The standard Astro file directory structure is what I used to build my website. I have a pages directory that contains all of my pages, a components directory that contains all of my components, and a layouts directory that contains all of my layouts. I also have a public directory that contains all of my static files, such as images.
 
 ```
-├── components
-│   ├── BlogCard.astro
-│   ├── BlogPost.astro
-│   ├── Header.astro
-|   ├── ...
-├── layouts
-│   ├── PostsLayout.astro
-│   ├── PageLayout.astro
-├── pages
-│   ├── blog
-│   │   ├── MyFirstPost.md
-│   │   ├── MySecondPost.md
-│   │   ├── ...
-|   ├── tags
-|   |   ├── [tags].md
-|   ├── about.astro
-|   ├── index.astro
+- components
+  - BlogCard.astro
+  - BlogPost.astro
+  - Header.astro
+  - ...
+- layouts
+  - PostsLayout.astro
+  - PageLayout.astro
+- content
+  - posts
+    - BuildBlogAstro.md
+    - ...
+- pages
+  - blog
+    - [slug].astro
+    - index.astro
+  - tags
+    - [tags].md
+  - about.astro
+  - index.astro
 ```
 
 I am going to assume that readers understand the basics of components, layouts, and pages in JavaScript frameworks. As such, I am going to talk about the more interesting parts, the blog posts, and the tags.
@@ -94,7 +98,7 @@ Once I had completed my blog, I wanted to deploy it to the internet. I used Digi
 - First, I created a Digital Ocean account, by connecting my GitHub account, and connecting a credit card.
 - Next, I created a new app, and connected it to my GitHub account, only giving it access to my blog repository.
 - Once you go to the next page, you will select the resource type, by default, the option is a web service, which will cost $5 a month. To avoid this charge, select the static site option as shown below.
-  ![Digital Ocean Resource](../Digital_Ocean_Deploy.png)
+  ![Digital Ocean Resource](/blogImages/buildingBlogAstro/Digital_Ocean_Deploy.png)
 - Set any environment variables that you need, and review your application. By default Astro will build to a dist directory, luckily Digital Ocean will automatically detect this.
 - Once you have reviewed your application, you can deploy it. This will take a few minutes, but once it is done, you will be able to access your application.
 - By default, it will give your app a sub-domain on `ondigitalocean.app`. You can also register a custom domain. I used google domains to register a custom domain for my blog, as they are easy to use and cost $12 a year for most domain names, but there are other great options as well.
@@ -102,7 +106,7 @@ Once I had completed my blog, I wanted to deploy it to the internet. I used Digi
 
 Our site is now live with the domain name of our choice, all for only $12 a year.
 
-![Digital Ocean Live](../Digital_Ocean_Live.png)
+![Digital Ocean Live](/blogImages/buildingBlogAstro/Digital_Ocean_Live.png)
 
 ## Future Plans
 

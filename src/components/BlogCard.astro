@@ -1,29 +1,31 @@
 ---
 import { Icon } from "astro-icon";
 // Import all posts from the blog directory
-const allPosts = await Astro.glob("../pages/blog/*.md");
+
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
 // Sort posts by date in descending order
 const sortedPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
-// Only include 10 most recent posts in the feed
+// // Only include 10 most recent posts in the feed
 const lastTenPosts = sortedPosts.slice(0, 10);
 ---
 
+<!-- relative top-0 block h-full overflow-hidden transition-all duration-100
+ease-in-out bg-white shadow-lg hover:-top-2 hover:shadow-xl rounded-xl -->
 <ul>
   {
     lastTenPosts.map(post => (
-      <a href={`/blog/${post.frontmatter.link}`}>
-        <div class="grid grid-cols-2 mb-20 h-full overflow-hidden transition-all duration-100 ease-in-out bg-white rounded-xl hover:border-r-2 hover:bg-slate-50">
-          <img class="rounded-md w-11/12" src={post.frontmatter.image} />
+      <a href={`/blog/${post.data.link}`}>
+        <div class="grid grid-cols-2 relative top-0 block h-full overflow-hidden transition-all duration-100 ease-in-out bg-white hover:-top-2 hover:shadow-md rounded-xl mb-20">
+          <img class="rounded-md w-3/4" src={post.data.image} />
           <div>
-            <div class="text-2xl">{post.frontmatter.title}</div>
+            <div class="text-xl">{post.data.title}</div>
             <div class="pb-4">
-              {post.frontmatter.date} | {post.frontmatter.tags}
+              {post.data.date} | {post.data.tags}
             </div>
-            <div>{post.frontmatter.description}</div>
+            <div>{post.data.description}</div>
           </div>
         </div>
       </a>

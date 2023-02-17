@@ -6,9 +6,10 @@ date: "2023-02-03"
 description: "How to use the DOD Iron Bank, to create hardened containers."
 tags: [" Cloud", " DOD", " Security"]
 link: "IronBank"
-image: "../Iron_Bank.png"
+image: "/blogImages/Iron_Bank.png"
 draft: false
 featured: true
+slug: "IronBank"
 ---
 
 # Coming Soon

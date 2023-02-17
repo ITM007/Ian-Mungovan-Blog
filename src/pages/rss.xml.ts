@@ -1,17 +1,18 @@
 import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
 
-const allPosts = import.meta.glob("../blog/*.md", { eager: true });
-
-const posts = Object.values(allPosts);
-export const get = () =>
-  rss({
-    title: "Ian Mungovan | Blog",
+export async function get() {
+  const posts = await getCollection("posts");
+  return rss({
+    title: "Ian Munogvan | Blog",
     description: "Ian Mungovan Blog",
     site: "https://ianmungovan.dev",
-    // items: import.meta.glob("./**/*.md"),
     items: posts.map(post => ({
-      link: post.url,
-      title: post.frontmatter.title,
-      pubDate: post.frontmatter.pubDate,
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      description: post.data.description,
+      link: `/posts/${post.slug}/`,
     })),
+    customData: `<language>en-us</language>`,
   });
+}

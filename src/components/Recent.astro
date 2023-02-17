@@ -1,12 +1,11 @@
 ---
 import { Icon } from "astro-icon";
+import { getCollection } from "astro:content";
 // Import all posts from the blog directory
-const allPosts = await Astro.glob("../pages/blog/*.md");
+const allPosts = await getCollection("posts");
 // Sort posts by date in descending order
 const sortedPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 // Only include 5 most recent posts in the feed
 const lastFivePosts = sortedPosts.slice(0, 5);
@@ -16,9 +15,9 @@ const lastFivePosts = sortedPosts.slice(0, 5);
 <div>
   {
     lastFivePosts.map(post => (
-      <a href={`/blog/${post.frontmatter.link}`}>
+      <a href={`/blog/${post.data.link}`}>
         <div class="mt-8">
-          {post.frontmatter.title}
+          {post.data.title}
           <div class="flex italic">
             <Icon
               class="mr-1"
@@ -27,9 +26,9 @@ const lastFivePosts = sortedPosts.slice(0, 5);
               width="20"
               height="20"
             />
-            {post.frontmatter.date} | {post.frontmatter.tags}
+            {post.data.date} | {post.data.tags}
           </div>
-          <div>{post.frontmatter.description}</div>
+          <div>{post.data.description}</div>
         </div>
       </a>
     ))

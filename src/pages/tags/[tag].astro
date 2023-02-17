@@ -1,12 +1,11 @@
----
+<!-- ---
 import BaseLayout from "../../layouts/PageLayout.astro";
 import { Icon } from "astro-icon";
-export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../blog/*.md");
 
-  const uniqueTags = [
-    ...new Set(allPosts.map(post => post.frontmatter.tags).flat()),
-  ];
+import { getCollection, getEntryBySlug } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
 
   return uniqueTags.map(tag => {
     const filteredPosts = allPosts.filter(post =>
@@ -42,5 +41,4 @@ const { posts } = Astro.props;
         </a>
       ))
     }
-  </ul>
-</BaseLayout>
+  </ul> -->

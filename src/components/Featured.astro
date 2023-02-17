@@ -1,11 +1,11 @@
 ---
 import Card from "../components/postPreview.astro";
 
-const allPosts = await Astro.glob("../pages/blog/*.md");
+import { getCollection } from "astro:content";
+// Import all posts from the blog directory
+const allPosts = await getCollection("posts");
 // Sorts posts if fetured is true
-const featuredPosts = allPosts.sort(post =>
-  post.frontmatter.featured ? -1 : 1
-);
+const featuredPosts = allPosts.sort(post => (post.data.featured ? -1 : 1));
 
 // Only allows 3 featured posts
 const threeFeaturedPosts = featuredPosts.slice(0, 3);
@@ -18,9 +18,9 @@ const threeFeaturedPosts = featuredPosts.slice(0, 3);
   data-test="articles-section"
 >
   {
-    threeFeaturedPosts.map(p => (
+    threeFeaturedPosts.map(posts => (
       <div>
-        <Card post={p} />
+        <Card post={posts.data} />
       </div>
     ))
   }

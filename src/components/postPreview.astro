@@ -6,17 +6,17 @@ const { post } = Astro.props;
 ---
 
 <a
-  href={post.url}
+  href={`/blog/${post.link}`}
   class="relative top-0 block h-full overflow-hidden transition-all duration-100 ease-in-out bg-white shadow-lg hover:-top-2 hover:shadow-xl rounded-xl"
   data-test="article-card"
 >
-  <img src={post.frontmatter.image} alt="" width="360" height="192" />
+  <img src={post.image} alt="" width="360" height="192" />
   <div class="px-8 py-6">
-    <h2 class="text-xl font-bold leading-tight">
-      {post.frontmatter.title}
+    <h2 class="leading-tight">
+      {post.title}
     </h2>
     <p class="flex items-center mt-4 text-xs text-gray-600">
-      {post.frontmatter.date} | {post.frontmatter.tags}
+      {post.date} | {post.tags}
     </p>
   </div>
 </a>

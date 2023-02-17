@@ -5,7 +5,7 @@ import BlogPost from "../components/BlogPost.astro";
 import "@fontsource/jetbrains-mono";
 
 const { frontmatter } = Astro.props;
-// const { title, description, date, hero } = Astro.props;
+const { title, description, date, hero } = Astro.props;
 ---
 
 <html lang={frontmatter.lang || "en"} title="Posts">
