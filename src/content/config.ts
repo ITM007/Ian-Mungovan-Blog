@@ -11,6 +11,7 @@ const blogCollection = defineCollection({
     link: z.string(),
     featured: z.boolean(),
     image: z.string(),
+    pubDate: z.date(),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)

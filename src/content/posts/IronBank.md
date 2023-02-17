@@ -3,6 +3,7 @@ layout: "../../layouts/PostsLayout.astro"
 title: DOD Iron Bank
 author: "Ian Mungovan"
 date: "2023-02-03"
+pubDate: 2023-02-03
 description: "How to use the DOD Iron Bank, to create hardened containers."
 tags: [" Cloud", " DOD", " Security"]
 link: "IronBank"

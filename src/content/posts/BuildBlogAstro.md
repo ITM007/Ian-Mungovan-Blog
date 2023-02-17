@@ -10,6 +10,7 @@ image: "/blogImages/buildingBlogAstro/Blog.png"
 draft: true
 featured: true
 slug: "BuildBlogAstro"
+pubDate: 2023-01-15
 ---
 
 ## Table of contents
