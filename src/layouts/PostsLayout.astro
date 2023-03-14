@@ -9,9 +9,14 @@ const { title, description, date, hero } = Astro.props;
 ---
 
 <html lang={frontmatter.lang || "en"} title="Posts">
-  <title>Ian Mungovan Blog</title>
+  <head>
+    <meta name="description" content="Ian Mungovan's Blog" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Header title={title} />
+    <title>Ian Mungovan Blog</title>
+  </head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <body class="container w-3/4 max-w-screen-xl mx-auto prose">
     <Header title="Title" />
     <main class="py-6 lg:py-20">
@@ -25,10 +30,9 @@ const { title, description, date, hero } = Astro.props;
       </BlogPost>
     </main>
     <Footer />
-  </body>
+  </body><style>
+    body {
+      font-family: "JetBrains Mono", monospace;
+    }
+  </style>
 </html>
-<style>
-  body {
-    font-family: "JetBrains Mono", monospace;
-  }
-</style>
