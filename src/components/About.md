@@ -19,6 +19,8 @@ At Embry-Riddle I was a part of the Embry-Riddle EcoCar team, working on self-dr
 
 I have completed SANS 522: Web Application Security, Virtual Hacking Labs, CompTIA Security+, Udacity Cloud Native Developer, and Udacity Azure Cloud Developer.
 
+<!-- ![No JavaScript](public/certifications/Cloud_Native_Application_Architecture_Nanodegree.pdf) -->
+
 ## Hobbies
 
 Guitar, Piano, Building Software, Hiking, reading about history, economic theory, and politics, and playing with my dog.

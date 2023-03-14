@@ -26,7 +26,9 @@ const lastFivePosts = sortedPosts.slice(0, 5);
               width="20"
               height="20"
             />
-            {post.data.date} | {post.data.tags}
+            <div>
+              {post.data.date} | {post.data.tags}
+            </div>
           </div>
           <div>{post.data.description}</div>
         </div>

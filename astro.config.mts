@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +15,7 @@ export default defineConfig({
       path: "./tailwind.config.cts"
     }
   }), sitemap()],
-  output: "server",
+  output: "static",
   adapter: vercel({
     analytics: true
 })
