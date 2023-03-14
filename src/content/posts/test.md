@@ -7,7 +7,7 @@ pubDate: 2022-01-10
 description: "This is an example post and is used to test the blog."
 tags: [" Astro"]
 link: "test"
-image: "../blogImages/Example.png"
+image: "../blogImages/Example.avif"
 draft: false
 featured: true
 slug: "test"

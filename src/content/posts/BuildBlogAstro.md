@@ -6,7 +6,7 @@ date: "2023-01-15"
 description: "How I used Astro to build a high performance blog, and deployed it using Digital Ocean for free."
 tags: [" Astro", " Digital Ocean"]
 link: "BuildBlogAstro"
-image: "/blogImages/buildingBlogAstro/Blog.png"
+image: "/blogImages/buildingBlogAstro/Blog.avif"
 draft: true
 featured: true
 slug: "BuildBlogAstro"
@@ -43,7 +43,7 @@ Island Architecture is a concept that I have been interested in for a while. The
 
 Astro allows you to use zero JavaScript for static pages. This is a significant feature as it allows you to have the speed of a static page, but if you need to use JavaScript, you can. We can see this below in the screenshot of the network tab in the chrome dev tools. The page is fully loaded with no JavaScript.
 
-![No JavaScript](/blogImages/buildingBlogAstro/Blog_No_JS.png)
+![No JavaScript](/blogImages/buildingBlogAstro/Blog_No_JS.avif)
 
 ### High Performance with Ease of Use
 
@@ -51,13 +51,13 @@ Astro is built with the idea that blogging is a first-class citizen. This is cle
 
 Astro has fantastic performance, this is mostly because of the Island Architecture and the ability to ship zero JavaScript, as talked about above. We can see this when running a lighthouse audit on the blog. The blog has a performance score of 100, and a best practices score of 100.
 
-<!-- [Lighthouse Audit](../Blog_Lighthouse.png) -->
+![Lighthouse Audit](/blogImages/buildingBlogAstro/Blog_Lighthouse.avif)
 
 ## Layout of my blog
 
 The standard Astro file directory structure is what I used to build my website. I have a pages directory that contains all of my pages, a components directory that contains all of my components, and a layouts directory that contains all of my layouts. I also have a public directory that contains all of my static files, such as images.
 
-```
+```bash
 - components
   - BlogCard.astro
   - BlogPost.astro
@@ -99,7 +99,9 @@ Once I had completed my blog, I wanted to deploy it to the internet. I used Digi
 - First, I created a Digital Ocean account, by connecting my GitHub account, and connecting a credit card.
 - Next, I created a new app, and connected it to my GitHub account, only giving it access to my blog repository.
 - Once you go to the next page, you will select the resource type, by default, the option is a web service, which will cost $5 a month. To avoid this charge, select the static site option as shown below.
-  ![Digital Ocean Resource](/blogImages/buildingBlogAstro/Digital_Ocean_Deploy.png)
+
+![Digital Ocean Resource](/blogImages/buildingBlogAstro/Digital_Ocean_Deploy.avif)
+
 - Set any environment variables that you need, and review your application. By default Astro will build to a dist directory, luckily Digital Ocean will automatically detect this.
 - Once you have reviewed your application, you can deploy it. This will take a few minutes, but once it is done, you will be able to access your application.
 - By default, it will give your app a sub-domain on `ondigitalocean.app`. You can also register a custom domain. I used google domains to register a custom domain for my blog, as they are easy to use and cost $12 a year for most domain names, but there are other great options as well.
@@ -107,7 +109,7 @@ Once I had completed my blog, I wanted to deploy it to the internet. I used Digi
 
 Our site is now live with the domain name of our choice, all for only $12 a year.
 
-![Digital Ocean Live](/blogImages/buildingBlogAstro/Digital_Ocean_Live.png)
+![Digital Ocean Live](/blogImages/buildingBlogAstro/Digital_Ocean_Live.avif)
 
 ## Future Plans
 

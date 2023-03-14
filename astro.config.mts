@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import customTheme from "./mytheme.json"
 
 // https://astro.build/config
 import vercel from "@astrojs/vercel/static";
@@ -18,5 +19,13 @@ export default defineConfig({
   output: "static",
   adapter: vercel({
     analytics: true
-})
+  }),
+markdown: {
+    // shikiConfig: { theme: customTheme },
+    shikiConfig: {
+      theme: customTheme,
+      langs: [],
+      wrap: true,
+    },
+  },
 });

@@ -7,7 +7,7 @@ pubDate: 2023-02-03
 description: "How to use the DOD Iron Bank, to create hardened containers."
 tags: [" Cloud", " DOD", " Security"]
 link: "IronBank"
-image: "/blogImages/Iron_Bank.png"
+image: "/blogImages/Iron_Bank.avif"
 draft: false
 featured: true
 slug: "IronBank"
