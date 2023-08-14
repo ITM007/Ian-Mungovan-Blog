@@ -2,10 +2,12 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import customTheme from "./mytheme.json"
+import customTheme from "./mytheme.json";
+
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
-import vercel from "@astrojs/vercel/static";
+import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,17 +17,17 @@ export default defineConfig({
     config: {
       path: "./tailwind.config.cts"
     }
-  }), sitemap()],
+  }), sitemap(), image()],
   output: "static",
   adapter: vercel({
     analytics: true
   }),
-markdown: {
+  markdown: {
     // shikiConfig: { theme: customTheme },
     shikiConfig: {
       theme: customTheme,
       langs: [],
-      wrap: true,
-    },
-  },
+      wrap: true
+    }
+  }
 });

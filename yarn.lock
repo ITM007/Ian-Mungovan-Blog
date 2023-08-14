@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@altano/tiny-async-pool@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@altano/tiny-async-pool@npm:1.0.2"
+  checksum: 20cb16cd1a85576bfee4b923d5efef1f1957a048268e166026e9c15304902e500147baf3ac65c3d8cfaaf6d1e78f74efd6641c0cd7ce12b97d97145f15825788
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.2.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -33,6 +40,26 @@ __metadata:
   version: 1.2.1
   resolution: "@astrojs/compiler@npm:1.2.1"
   checksum: 55fbcd8843f7e463567ade3b4cd16dff7c20b1eab6245d48083208f48e269d797e8a3f1b3f2260516ca3778a29823cc2f47cab83a623fa26e73e00a12007fe3e
+  languageName: node
+  linkType: hard
+
+"@astrojs/image@npm:^0.16.1":
+  version: 0.16.1
+  resolution: "@astrojs/image@npm:0.16.1"
+  dependencies:
+    "@altano/tiny-async-pool": ^1.0.2
+    http-cache-semantics: ^4.1.0
+    image-size: ^1.0.2
+    kleur: ^4.1.5
+    magic-string: ^0.27.0
+    mime: ^3.0.0
+  peerDependencies:
+    astro: ^2.1.3
+    sharp: ">=0.31.0"
+  peerDependenciesMeta:
+    sharp:
+      optional: true
+  checksum: 42db9d823f284ac444ff863a5c98881ed53a7921edc2132c294199e4bd53e4352da4dca71b7f5fc8d1f167003af927deb329ba5e73e4ea945dd8642878ae68ef
   languageName: node
   linkType: hard
 
@@ -682,6 +709,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ian-mungovan/blog@workspace:."
   dependencies:
+    "@astrojs/image": ^0.16.1
     "@astrojs/language-server": ^0.29.5
     "@astrojs/mdx": ^0.16.0
     "@astrojs/rss": ^2.1.0
@@ -690,7 +718,7 @@ __metadata:
     "@astrojs/vercel": ^3.1.3
     "@fontsource/jetbrains-mono": ^4.5.12
     "@tailwindcss/typography": ^0.5.9
-    astro: ^2.0.15
+    astro: ^2.1.3
     astro-icon: ^0.8.0
     prettier: ^2.8.4
     prettier-plugin-astro: ^0.8.0
@@ -1374,7 +1402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^2.0.15":
+"astro@npm:^2.1.3":
   version: 2.1.3
   resolution: "astro@npm:2.1.3"
   dependencies:
