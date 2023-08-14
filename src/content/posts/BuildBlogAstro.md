@@ -74,47 +74,27 @@ Astro has great performance, scoring a 100 for performance and 100 for best prac
 
 The standard Astro file directory structure is what I used to build my website. My pages, components, and layouts are organized into separate directories. I also have a public directory that contains all of my static files, as well as a content folder that holds all my blog posts (like this post!).
 
-```bash
-
-- components
-
-  - BlogCard.astro
-
-  - BlogPost.astro
-
-  - Header.astro
-
-  - ...
-
-- layouts
-
-  - PostsLayout.astro
-
-  - PageLayout.astro
-
-- content
-
-  - posts
-
-    - BuildBlogAstro.md
-
-    - ...
-
-- pages
-
-  - blog
-
-    - [slug].astro
-
-    - index.astro
-
-  - tags
-
-    - [tags].md
-
-  - about.astro
-
-  - index.astro
+```
+|-- components
+    |-- BlogCard.astro
+    |-- BlogPost.astro
+    |-- Header.astro
+    |-- ...
+|-- layouts
+    |-- PostsLayout.astro
+    |-- PageLayout.astro
+|-- content
+    |-- posts
+        |-- BuildBlogAstro.md
+        |-- ...
+|-- pages
+    |-- blog
+    |   |-- [slug].astro
+    |   |-- index.astro
+    |-- tags
+    |   |-- [tags].md
+    |-- about.astro
+    |-- index.astro
 
 ```
 
