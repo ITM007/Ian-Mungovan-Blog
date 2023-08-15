@@ -3,7 +3,7 @@
 
 # About
 
-Hi, my name is Ian Mungovan. I am a DevSecOps Engineer at Rolls-Royce Defense in Indianapolis Indiana, with a focus on Cloud Native Development, Application Security, and Digital Transformation. I am also a Cyber Security Officer in the US Army. Learn more about my work experience, education, and hobbies below.
+Hi, my name is Ian Mungovan. I am a DevSecOps Engineer at [Rolls-Royce Defense](https://www.rolls-royce.com/country-sites/northamerica.aspx) in Indianapolis Indiana, with a focus on Cloud Native Development, Application Security, and Digital Transformation. I am also a [Cyber Officer](https://www.goarmy.com/careers-and-jobs/career-match/signal-intelligence/locations-stats-frequencies/17a-cyber-warfare-officer.html) in the US Army. Learn more about my work experience, education, and hobbies below.
 
 ## Work Experience
 

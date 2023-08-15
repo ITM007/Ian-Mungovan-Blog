@@ -94,7 +94,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] },
 "IronBank.md": {
   id: "IronBank.md",
-  slug: "IronBank",
+  slug: "DODIronBank",
   body: string,
   collection: "posts",
   data: InferEntrySchema<"posts">
